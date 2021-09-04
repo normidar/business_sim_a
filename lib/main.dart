@@ -1,20 +1,39 @@
+import 'package:business_sim_a/game_list.dart';
+import 'package:business_sim_a/sim1/home_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(
+      MaterialApp(
+        home: StartPage(),
+      ),
+    );
 
-// '現金:300万｜ABC被識快社'
-class MyApp extends StatelessWidget {
+class StartPage extends StatelessWidget {
+  Future initAll(BuildContext context) async {
+    // 初期化
+    // await Global.init();
+    await Future.delayed(Duration(seconds: 1));
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return HomePage();
+      }),
+      (r) {
+        return false;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Level1',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Column(
-        children: [],
+    initAll(context);
+    return Container(
+      color: Colors.white,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 class EngineCenter {
   // singleton
-  static final EngineCenter instance = EngineCenter();
+  static final EngineCenter shared = EngineCenter();
 
   int _turn = 0;
   int getTurn() => _turn;

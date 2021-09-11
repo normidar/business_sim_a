@@ -1,5 +1,5 @@
 import 'package:business_sim_a/sim1/engine/Casher.dart';
-import 'package:business_sim_a/sim1/engine/ProductionLine.dart';
+import 'package:business_sim_a/sim1/engine/fixed_asset/ProductionLine.dart';
 
 class Player {
   /// 生产线仓库
